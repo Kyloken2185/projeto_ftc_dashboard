@@ -3,5 +3,5 @@ numpy==1.26.4
 streamlit==1.45.1
 streamlit-folium==0.25.0
 folium==0.19.5
-Pillow
+pillow
 haversine==2.9.0
