@@ -146,7 +146,7 @@ def clear_dataframe( df1 ):
 # nal '>'.
 
 # Lendo o nosso Dataframe:
-df = pd.read_csv( '/home/marco/Marco/marco_ftc_python_jupiter_lab/train.csv' )
+df = pd.read_csv( 'train.csv' )
 
 # Primeiro fazemos a cópia de nosso Dataframe para preservar os dados iniciais, se algo fora de nosso escopo ocorrer:
 df1 = df.copy()
