@@ -220,8 +220,9 @@ def clear_dataframe( df1 ):
     df1 = df1.loc[ linhas_selecionadas, : ]
     linhas_selecionadas = df1[ 'Delivery_person_Age' ] != 'NaN'
     df1 = df1.loc[ linhas_selecionadas, : ]
-    df1[ 'Time_taken(min)' ] = df1[ 'Time_taken(min)'].apply( lambda x: x.split( '(min) ')[1])
-    df1[ 'Time_taken(min)' ] = df1[ 'Time_taken(min)'].astype( int ) 
+    df1['Time_taken(min)'] = df1['Time_taken(min)'].apply(lambda x: str(x).split('(min)')[0])
+    df1['Time_taken(min)'] = df1['Time_taken(min)'].astype(int)  # ou float, se necessário
+
     df1 = df1.reset_index( drop = True )
     
     # Vamos mudar os tipos de variáveis de algumas features que estão como 'object' e mudar a configuração da data da coluna 'Order_Date'
