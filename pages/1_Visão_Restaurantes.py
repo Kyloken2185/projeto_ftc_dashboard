@@ -220,8 +220,11 @@ def clear_dataframe( df1 ):
     df1 = df1.loc[ linhas_selecionadas, : ]
     linhas_selecionadas = df1[ 'Delivery_person_Age' ] != 'NaN'
     df1 = df1.loc[ linhas_selecionadas, : ]
-    df1['Time_taken(min)'] = df1['Time_taken(min)'].apply(lambda x: str(x).split('(min)')[0])
-    df1['Time_taken(min)'] = df1['Time_taken(min)'].astype(int)  # ou float, se necessário
+    
+     # Corrigir a coluna Time_taken(min):
+    df1['Time_taken(min)'] = df1['Time_taken(min)'].astype(str).str.extract(r'(\d+)')  # extrai o número
+    df1 = df1.dropna(subset=['Time_taken(min)'])  # remove linhas sem número
+    df1['Time_taken(min)'] = df1['Time_taken(min)'].astype(int)
 
     df1 = df1.reset_index( drop = True )
     
