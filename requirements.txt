@@ -1,8 +1,8 @@
-streamlit==1.45.1
-pandas==2.2.2
-numpy==1.26.4
-plotly==5.21.0
-folium==0.15.1
-streamlit-folium==0.25.0
-haversine==2.8.1
-Pillow==10.3.0
+streamlit
+pandas
+numpy
+plotly
+folium
+streamlit-folium
+haversine
+Pillow
